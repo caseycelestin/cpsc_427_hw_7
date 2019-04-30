@@ -274,6 +274,8 @@ func NewFood(w *World, pos Hex) *Food {
 
 	return &f
 }
+ 
+
 
 // A Tazzie is a Mobile, Immortal agent that emits nothing, follows scents,
 // and passes infections to other tazzies
@@ -281,7 +283,6 @@ type Tazzie struct {
 	Mobile
 	NonEmitter
 	Immortal
-	NoTazzieAction
 	ScentFollower
 	infected bool
 }
@@ -290,14 +291,22 @@ func (d *Tazzie) ActOn(a Agent) {
 	a.AcceptTazzie(d)
 }
 
+
+func (p *Tazzie) AcceptTazzie(a *Tazzie) {
+    if a.infected {
+      if rand.Intn(5) < 1{
+        p.infected = true
+      }
+    }
+}
+
 // String returns "p" as the printable representation of a Tazzie.
 func (d *Tazzie) String() string {
      if d.infected {
-     	return "b"
+        return "b"
      } else {
         return "d"
-     }	
-     
+     }
 }
 
 // NewTazzie creates and returns a new Tazzie at a randomly chosen location and with a randomly
@@ -311,7 +320,6 @@ func NewTazzie(w *World, i bool) *Tazzie {
 			func () { goal.Copy(w.Random()) }} ,
 		NonEmitter{},
 		Immortal{},
-		NoTazzieAction{},
 		ScentFollower{&goal},
 		i}
 

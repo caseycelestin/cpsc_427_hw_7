@@ -56,7 +56,7 @@ func testInfection() {
 
 	fmt.Println("PASSED")
 }
-
+/*
 func testUpdateAutomobile() {
 	w := NewWorld(12, 0, 0)
 	auto := NewAutomobile(w, Hex{3, 0}, Hex{3, 10})
@@ -209,7 +209,7 @@ func testUpdateSpawnedAutomobile() {
 
 	fmt.Println("PASSED")
 }
-
+*/
 func testCountCars() {
 	w := NewWorld(15, 7, 1)
 
@@ -253,7 +253,7 @@ func main() {
 				fmt.Println(os.Args[0], ": Invalid test number: ", args[1])
 			} else if testNum == 0 {
 				testInfection()
-			} else if testNum == 1 {
+/*			} else if testNum == 1 {
 				testUpdateAutomobile()
 			} else if testNum == 2 {
 				testKillAutomobile()
@@ -267,7 +267,7 @@ func main() {
 				testRoadSpawn()
 			} else if testNum == 7 {
 				testUpdateSpawnedAutomobile()
-			} else if testNum == 8 {
+*/			} else if testNum == 8 {
 				simulate( func () {} )
 				fmt.Println("PASSED")
 			} else if testNum == 9 {
