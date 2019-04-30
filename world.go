@@ -134,5 +134,8 @@ func NewWorld(w int, healthy int, infected int) *World {
 		world.agents = append(world.agents, NewTazzie(&world, true))
 	}
 
+  for i := 0; i < 5; i++ {
+    world.agents = append(world.agents, NewAutomobile(&world, world.Random(), world.Random()))
+  }
 	return &world
 }

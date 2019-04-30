@@ -325,3 +325,55 @@ func NewTazzie(w *World, i bool) *Tazzie {
 
 	return &p
 }
+
+type Automobile struct{
+  Mobile
+  Mortal
+  Emitter
+  NoActions
+  Inert
+}
+
+func (a *Automobile) String() string {
+    return "A"
+}
+
+func NewAutomobile(w *World, s Hex, e Hex) *Automobile {
+    alive := true
+    a := Automobile{
+        Mobile{
+            Generic{w, s},
+            &e,
+			      func () { alive = false } },
+        Mortal{&alive},
+        Emitter{
+            15,
+            nil},
+        NoActions{},
+        Inert{}}
+
+    a.Emit = func () Agent { return NewFood(w, s)}
+
+    return &a;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

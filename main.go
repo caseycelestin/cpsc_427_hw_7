@@ -56,7 +56,7 @@ func testInfection() {
 
 	fmt.Println("PASSED")
 }
-/*
+
 func testUpdateAutomobile() {
 	w := NewWorld(12, 0, 0)
 	auto := NewAutomobile(w, Hex{3, 0}, Hex{3, 10})
@@ -139,6 +139,7 @@ func testSpawn(a Agent, rate float64, kind string, verifyLocation func(r int, c 
 	fmt.Println("PASSED")
 }
 
+/*
 func testUpdateRoad() {
 	w := NewWorld(12, 0, 0)
 	road := NewRoadEnd(w, Hex{3, 0}, Hex{3, 10})
@@ -253,13 +254,13 @@ func main() {
 				fmt.Println(os.Args[0], ": Invalid test number: ", args[1])
 			} else if testNum == 0 {
 				testInfection()
-/*			} else if testNum == 1 {
+      } else if testNum == 1 {
 				testUpdateAutomobile()
 			} else if testNum == 2 {
 				testKillAutomobile()
 			} else if testNum == 3 {
 				testAutomobileSpawn()
-			} else if testNum == 4 {
+	/*					} else if testNum == 4 {
 				testUpdateRoad()
 			} else if testNum == 5 {
 				testKillRoad()
