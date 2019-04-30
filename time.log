@@ -4,5 +4,12 @@ ESTIMATE of time to complete assignment: 3 hours
   Date  Started  Spent  Work Completed
   ----  -------  -----  --------------
   4/26  11:50    0:30   Read over assignment, created directories and copied over necessary code
+  4/30  12:30    0:30   Implemented the spreading of disease
+  4/30  13:00    1:00   Added automobiles to the simulation
+  4/30  14:45    1:15   Added roads then tested against public test cases
                  ----
-                        TOTAL time Spent
+                 3:15   TOTAL time Spent
+
+I discussed my solution with: N/A
+
+Finding my footing in Go took some getting use to, but overall quite an easy assignment.Most of my time was spent checking syntax and then reading over the given code to understand how to implement the new parts.
