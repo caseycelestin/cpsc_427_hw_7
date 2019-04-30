@@ -139,7 +139,6 @@ func testSpawn(a Agent, rate float64, kind string, verifyLocation func(r int, c 
 	fmt.Println("PASSED")
 }
 
-/*
 func testUpdateRoad() {
 	w := NewWorld(12, 0, 0)
 	road := NewRoadEnd(w, Hex{3, 0}, Hex{3, 10})
@@ -210,7 +209,7 @@ func testUpdateSpawnedAutomobile() {
 
 	fmt.Println("PASSED")
 }
-*/
+
 func testCountCars() {
 	w := NewWorld(15, 7, 1)
 
@@ -260,7 +259,7 @@ func main() {
 				testKillAutomobile()
 			} else if testNum == 3 {
 				testAutomobileSpawn()
-	/*					} else if testNum == 4 {
+      } else if testNum == 4 {
 				testUpdateRoad()
 			} else if testNum == 5 {
 				testKillRoad()
@@ -268,7 +267,7 @@ func main() {
 				testRoadSpawn()
 			} else if testNum == 7 {
 				testUpdateSpawnedAutomobile()
-*/			} else if testNum == 8 {
+			} else if testNum == 8 {
 				simulate( func () {} )
 				fmt.Println("PASSED")
 			} else if testNum == 9 {

@@ -352,12 +352,41 @@ func NewAutomobile(w *World, s Hex, e Hex) *Automobile {
         NoActions{},
         Inert{}}
 
-    a.Emit = func () Agent { return NewFood(w, s)}
+    a.Emit = func () Agent {
+        r, c := a.Position()
+        loc := Hex{r,c}
+        return NewFood(w, loc)}
 
     return &a;
 }
 
+type RoadEnd struct {
+  Stationary
+  Emitter
+  Immortal
+  NoActions
+  Inert
+}
 
+func (r *RoadEnd) String() string {
+    return ""
+}
+
+func NewRoadEnd(w *World, b Hex, e Hex) *RoadEnd {
+  r := RoadEnd{
+      Stationary{
+        Generic{w, b} },
+      Emitter{
+        25, 
+        nil},
+      Immortal{},
+      NoActions{},
+      Inert{} }
+
+  r.Emit = func () Agent { return NewAutomobile(w, b, e)}
+
+  return &r
+}
 
 
 
